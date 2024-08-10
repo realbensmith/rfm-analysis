@@ -98,12 +98,12 @@ This repository includes a complete working example located in the `rfm-analysis
 1. Navigate to the `rfm-analysis-example` directory:
    ```bash
    cd rfm-analysis-example
-   '''
+   ```
 2. Ensure that AdventureWorksDW2022Sales.xlsx is in the same directory as rfm_analysis_example.py.
 3. Run the rfm_analysis_example.py script:
-   '''bash
+   ```bash
    python rfm_analysis_example.py
-   '''
+   ```
 4. The script will perform RFM analysis on the data in AdventureWorksDW2022Sales.xlsx and produce a segmentation of customers. It will also generate a plot visualizing the distribution of customer segments.
 
 An image of the output plot, `rfm_analysis.png`, has been included in the `rfm-analysis-example` directory.
