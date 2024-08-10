@@ -1,11 +1,12 @@
-# RFM Entity Segmentation Analysis
+# RFM Analysis
 
-This repository contains a Python script that performs RFM (Recency, Frequency, Monetary) analysis on any dataset with an identifiable entity. The script calculates RFM scores, segments the entities, and visualizes the distribution of these segments.
+This repository provides a template and a complete example for performing RFM (Recency, Frequency, Monetary) analysis on customer data or any other entity.
 
 ## Table of Contents
 - [Overview](#overview)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Example](#example)
 - [Customization](#customization)
 - [Output](#output)
 - [Contributing](#contributing)
@@ -19,6 +20,13 @@ RFM analysis is a versatile technique used to quantitatively rank and group enti
 - **Monetary (M):** The monetary value associated with the event or transaction.
 
 By evaluating these metrics, entities are segmented into groups such as "High Value," "Moderate Engagement," "New Entrants," and others. This segmentation can help inform strategies, whether you're analyzing customers, suppliers, employees, or any other type of entity.
+
+## Repository Structure
+
+- **rfm_analysis_template.py**: A generalized template that you can use to perform RFM analysis on your own dataset.
+- **rfm-analysis-example/**: This directory contains a complete working example of the RFM analysis process.
+  - **rfm_analysis_example.py**: The Python script that performs RFM analysis using data from the `AdventureWorksDW2022Sales.xlsx` file.
+  - **AdventureWorksDW2022Sales.xlsx**: A sample Excel file containing sales data from AdventureWorksDW2022, used in the example script.
 
 ## Installation
 
@@ -78,24 +86,47 @@ To run the script, you'll need to have Python installed along with the following
 3. Segments entities based on their RFM scores.
 4. Outputs the entity segments along with a visualization of the segment distribution.
 
+## Example
+
+### RFM Analysis Example
+
+This repository includes a complete working example located in the `rfm-analysis-example` directory.
+
+#### Running the Example:
+
+1. Navigate to the `rfm-analysis-example` directory:
+   ```bash
+   cd rfm-analysis-example
+   '''
+2. Ensure that AdventureWorksDW2022Sales.xlsx is in the same directory as rfm_analysis_example.py.
+3. Run the rfm_analysis_example.py script:
+   '''bash
+   python rfm_analysis_example.py
+   '''
+4. The script will perform RFM analysis on the data in AdventureWorksDW2022Sales.xlsx and produce a segmentation of customers. It will also generate a plot visualizing the distribution of customer segments.
+
 ## Customization
 
 The script can be customized to fit specific use cases:
 
-- **Adjust the RFM Scoring:**
-  - Modify the logic within the script to change how the RFM scores are assigned, e.g., by adjusting the number of bins in the `qcut` function or changing the segmentation thresholds.
+### Adjust the RFM Scoring:
 
-- **Entity Types:**
-  - Although the script is demonstrated with a customer dataset, it can be applied to any entity type with relevant data. Adjust the columns and logic as necessary for your specific use case.
+Modify the logic within the script to change how the RFM scores are assigned, e.g., by adjusting the number of bins in the `qcut` function or changing the segmentation thresholds.
 
-- **Visualization Customization:**
-  - The script uses Seaborn for visualization. You can customize the plot by adjusting parameters like color, plot type, labels, and titles.
+### Entity Types:
+
+Although the script is demonstrated with a customer dataset, it can be applied to any entity type with relevant data. Adjust the columns and logic as necessary for your specific use case.
+
+### Visualization Customization:
+
+The script uses Seaborn for visualization. You can customize the plot by adjusting parameters like color, plot type, labels, and titles.
 
 ## Output
 
 ### DataFrame Output
 
 The script outputs a DataFrame containing the following columns:
+
 - `EntityID`: The unique identifier for each entity.
 - `RFM_Score`: The combined score from the RFM analysis.
 - `Entity_Segment`: The segment assigned to each entity based on their RFM score.
@@ -103,8 +134,6 @@ The script outputs a DataFrame containing the following columns:
 ### Visualization
 
 The script also produces a bar chart that shows the count of entities in each segment. This visualization helps to quickly identify the distribution of entities across different segments.
-
-![Entity Segments Count](https://yourimageurl.com/entity_segments.png)
 
 ## Contributing
 
